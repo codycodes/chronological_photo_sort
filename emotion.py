@@ -11,7 +11,7 @@ params = urllib.urlencode({
 })
 
 # Replace the example URL below with the URL of the image you want to analyze.
-body = "{ 'url': 'https://i.imgur.com/4AiXzf8.jpg' }"
+body = "{ 'url': 'https://pbs.twimg.com/media/DAS749uVwAATDts.jpg:large' }"
 
 try:
     conn = httplib.HTTPSConnection('westus.api.cognitive.microsoft.com')
