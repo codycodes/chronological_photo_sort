@@ -4,14 +4,14 @@ import httplib, urllib, base64
 headers = {
     # Request headers. Replace the placeholder key below with your subscription key.
     'Content-Type': 'application/json',
-    'Ocp-Apim-Subscription-Key': '13hc77781f7e4b19b5fcdd72a8df7156',
+    'Ocp-Apim-Subscription-Key': '8bf1105c0e1d455fbec5cf35a22078aa',
 }
 
 params = urllib.urlencode({
 })
 
 # Replace the example URL below with the URL of the image you want to analyze.
-body = "{ 'url': 'http://example.com/picture.jpg' }"
+body = "{ 'url': 'https://i.imgur.com/4AiXzf8.jpg' }"
 
 try:
     conn = httplib.HTTPSConnection('westus.api.cognitive.microsoft.com')
@@ -22,3 +22,5 @@ try:
     conn.close()
 except Exception as e:
     print("[Errno {0}] {1}".format(e.errno, e.strerror))
+
+####################################
