@@ -6,7 +6,7 @@ Overall List of things To Do:
 
 (we're testing baby pictures & older pictures) for age
 
-*Discuss how as a team we can implement and then try calling the API (note the 20transactions/minute constraint)
+*Discuss how as a team we can implement and then try calling the API (note the 20transactions/minute constraint and 4MB limit!)
 
 *Figure out how to keep track of a single face (facial recognition)
 
