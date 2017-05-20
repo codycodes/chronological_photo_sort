@@ -4,7 +4,11 @@ Overall List of things To Do:
 
 *Have fun testing & Researching the Face API -> Figure out how to use the Microsoft Face API
 
+(we're testing baby pictures & older pictures) for age
+
 *Discuss how as a team we can implement and then try calling the API (note the 20transactions/minute constraint)
+
+*Figure out how to keep track of a single face (facial recognition)
 
 *Discuss the User Interface
 
