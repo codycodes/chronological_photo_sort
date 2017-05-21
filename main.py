@@ -26,3 +26,7 @@ try:
     conn.close()
 except Exception as e:
     print("[Errno {0}] {1}".format(e.errno, e.strerror))
+
+data = json.loads(data)
+print json.dumps(data, indent=4, sort_keys=True)
+print data[0]['faceAttributes']['age']
