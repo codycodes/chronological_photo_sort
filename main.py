@@ -17,10 +17,11 @@ params = urllib.urlencode({
 # Replace the example URL below with the URL of the image you want to analyze.
 photoUrls = ["http://i.imgur.com/kl5UuO1.png", "https://i.imgur.com/u1XBCp4.jpg"]
 
+photosDict = {}
+
 for url in photoUrls:
 
     body = "{'url' : \'" + url + "\'}"
-    print (body)
 
     try:
         conn = httplib.HTTPSConnection('westcentralus.api.cognitive.microsoft.com')
@@ -33,7 +34,8 @@ for url in photoUrls:
         print("[Errno {0}] {1}".format(e.errno, e.strerror))
 
     data = json.loads(data)
-    print json.dumps(data, indent=4, sort_keys=True)
+    #print json.dumps(data, indent=4, sort_keys=True)
     print data[0]['faceAttributes']['age']
+    print data[0]['faceId']
 
     time.sleep(3)
