@@ -1,5 +1,6 @@
 ########### Python 2.7 #############
 import httplib, urllib, base64, json, time
+from collections import OrderedDict
 
 headers = {
     # Request headers
@@ -15,9 +16,11 @@ params = urllib.urlencode({
 })
 
 # Replace the example URL below with the URL of the image you want to analyze.
-photoUrls = ["http://i.imgur.com/kl5UuO1.png", "https://i.imgur.com/u1XBCp4.jpg"]
+photoUrls = ["http://i.imgur.com/kl5UuO1.png", "https://i.imgur.com/u1XBCp4.jpg", "http://i.imgur.com/QB3DLCb.png", "http://i.imgur.com/ot5nQPb.png"]
 
-photosDict = {}
+# Create a dictionary to store the images in URL : age format
+dict = {}
+
 
 for url in photoUrls:
 
@@ -35,7 +38,18 @@ for url in photoUrls:
 
     data = json.loads(data)
     #print json.dumps(data, indent=4, sort_keys=True)
-    print data[0]['faceAttributes']['age']
-    print data[0]['faceId']
 
-    time.sleep(3)
+    try:
+        #Add dict entry
+        dict[url] = data[0]['faceAttributes']['age']
+    except:
+        pass
+
+    #time.sleep(3)
+
+
+
+sorted_dict = {}
+for key, value in sorted(dict.iteritems(), key=lambda (k,v): (v,k)):
+    print "%s: %s" % (key, value)
+    sorted_dict[key] = value
