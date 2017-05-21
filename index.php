@@ -10,15 +10,23 @@ $link2 = $_POST['link2'];
 <br><br><br>
 
 <form action = "index.php" method = "post">
+
 <?php
+
+$myfile = fopen("links.txt", "w") or die("Unable to open file!");
+fwrite($myfile, $link1);
+fwrite($myfile, "\n");
+fwrite($myfile, $link2);
+fclose($myfile);
+
 exec('python main.py');
 ?>
 
 Link 1: <input type = "text" name = "link1"></input><br>
-Link 2: <input type = "text" name = "testvol"></input><br>
+Link 2: <input type = "text" name = "link2"></input><br>
 <br>
 
-<input type = "submit" value = "Calculate" name = "submit">
+<button> Go!</button>
 <br>
 </div>
 

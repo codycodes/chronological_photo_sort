@@ -1,5 +1,9 @@
-########### Python 2.7 #############
-import httplib, urllib, base64, json, time
+################################################################################
+# CODE DAY 2017
+# ERIC, DANIEL, ANDREW, ALEX, CODY, CHUAN
+################################################################################
+
+import httplib, urllib, base64, json, time, os
 from collections import OrderedDict
 
 headers = {
