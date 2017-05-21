@@ -20,9 +20,8 @@ $link3 = $_POST['link3'];
 
 <br><br><br>
 
-<form action = "index.php" method = "post">
+<form method = "post">
 
-Name:   <input type = "text" name = "name"></input><br>
 Link 1: <input type = "text" name = "link1"></input><br>
 Link 2: <input type = "text" name = "link2"></input><br>
 Link 3: <input type = "text" name = "link3"></input><br>
