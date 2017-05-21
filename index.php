@@ -2,7 +2,6 @@
 ################################################################################
 # CODE DAY 2017
 # ERIC, DANIEL, ANDREW, ALEX, CODY, CHUAN
-# Frontend business
 ################################################################################
 !-->
 
@@ -31,8 +30,7 @@ Link 3: <input type = "text" name = "link3"></input><br>
 
 <?php
 //write links to filesystem
-$myfile = fopen("links.txt", "w") or die("Unable to open file!");
-fwrite($myfile, "\n");
+$myfile = fopen("toSort.txt", "w") or die("Unable to open file!");
 fwrite($myfile, $link1);
 fwrite($myfile, "\n");
 fwrite($myfile, $link2);

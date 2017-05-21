@@ -21,7 +21,7 @@ params = urllib.urlencode({
 
 # Replace the example URL below with the URL of the image you want to analyze.
 #Takes in file as an input
-with open("links.txt") as infile:
+with open("toSort.txt") as infile:
    url_list = infile.readlines()
    url_list = [x.strip() for x in url_list]
 infile.close()
@@ -40,7 +40,7 @@ for url in photoUrls:
         conn.request("POST", "/face/v1.0/detect?%s" % params, body, headers)
         response = conn.getresponse()
         data = response.read()
-        print(data)
+        #print(data)
         conn.close()
     except Exception as e:
         print("[Errno {0}] {1}".format(e.errno, e.strerror))
