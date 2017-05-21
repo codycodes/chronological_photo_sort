@@ -58,5 +58,5 @@ for url in photoUrls:
 
 sorted_dict = {}
 for key, value in sorted(dict.iteritems(), key=lambda (k,v): (v,k)):
-    print "%s: %s" % (key, value)
+    print "%s*%s" % (key, value)
     sorted_dict[key] = value
