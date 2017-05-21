@@ -20,7 +20,15 @@ params = urllib.urlencode({
 })
 
 # Replace the example URL below with the URL of the image you want to analyze.
-photoUrls = ["http://i.imgur.com/kl5UuO1.png", "https://i.imgur.com/u1XBCp4.jpg", "http://i.imgur.com/QB3DLCb.png", "http://i.imgur.com/ot5nQPb.png"]
+#Takes in file as an input
+with open("/Users/codes/Documents/chronological-photo-sort/input_file") as infile:
+   url_list = infile.readlines()
+   url_list = [x.strip() for x in url_list]
+infile.close()
+
+
+photoUrls = url_list
+
 
 # Create a dictionary to store the images in URL : age format
 dict = {}
@@ -49,7 +57,7 @@ for url in photoUrls:
     except:
         pass
 
-    #time.sleep(3)
+    time.sleep(3)
 
 
 
