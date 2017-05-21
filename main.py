@@ -45,9 +45,11 @@ for url in photoUrls:
     except:
         pass
 
-    #put it back after testing
     #time.sleep(3)
 
-sorted_dict =  OrderedDict(sorted(dict.values()))
 
-sorted_dict.values()
+
+sorted_dict = {}
+for key, value in sorted(dict.iteritems(), key=lambda (k,v): (v,k)):
+    print "%s: %s" % (key, value)
+    sorted_dict[key] = value
