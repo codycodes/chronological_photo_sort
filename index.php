@@ -15,14 +15,23 @@ $link3 = $_POST['link3'];
 <body>
 <title>SortMe</title>
 
-<div align = "center"><font face = "Tahoma" size = "300">SortMe</font>
+<div align = "center">
+<font face = "Tahoma" size = "300">SortMe</font>
+
 <br><br><br>
 
 <form action = "index.php" method = "post">
 
-<?php
+Link 1: <input type = "text" name = "link1"></input><br>
+Link 2: <input type = "text" name = "link2"></input><br>
+Link 3: <input type = "text" name = "link3"></input><br>
 
+<br>
+
+<?php
+//write links to filesystem
 $myfile = fopen("links.txt", "w") or die("Unable to open file!");
+fwrite($myfile, "\n");
 fwrite($myfile, $link1);
 fwrite($myfile, "\n");
 fwrite($myfile, $link2);
@@ -30,17 +39,13 @@ fwrite($myfile, "\n");
 fwrite($myfile, $link3);
 fclose($myfile);
 
-exec('python main.py');
-
+exec('python main.py > results.txt');
 ?>
 
-Link 1: <input type = "text" name = "link1"></input><br>
-Link 2: <input type = "text" name = "link2"></input><br>
-Link 3: <input type = "text" name = "link3"></input><br>
+<button>Go!</button>
+
 <br>
 
-<button>Go!</button>
-<br>
 </div>
 
 </body>
